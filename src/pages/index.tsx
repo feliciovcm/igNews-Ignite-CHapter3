@@ -9,7 +9,7 @@ import styles from "./home.module.scss";
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
 }
 
@@ -23,10 +23,9 @@ interface HomeProps {
 // AS CHAMADAS SÃO REALIZADAS ANTES, E APÓS COMPLETAS, A TELA É CARREGADA. INFORMAÇÕES QUE DEVEM SER EXIBIDAS EM TELA, LOGO NO CARREGAMENTO.
 
 // 3. Static side generation - Chamadas indexissafas por motores de busca que seus dados a serem exibidos não irão se alterar de
-// usuario para usuário, acessando a aplicação. 
+// usuario para usuário, acessando a aplicação.
 //                              Ex: Home de blog, posts de blogs, página de um produto em ecommerce...
 // AS CHAMADAS SÃO FEITAS DE TEMPO EM TEMPO DEFINIDO. NESSE MEIO TEMPO, A INFORMAÇÃO DA CHAMDA ANTERIOR É SALVA E EXIBIDA EM TODOS OS ACESSOS NESSE PERÍODO.
-
 
 export default function Home({ product }: HomeProps) {
   return (
@@ -44,7 +43,7 @@ export default function Home({ product }: HomeProps) {
             Get access to all publications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="girl coding" />
